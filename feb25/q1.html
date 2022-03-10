@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Frequency</h1>
+    <script>
+        let frequency = function(arr, target , x) {
+
+let low = 0, high = arr.length - 1;
+let result = -1;
+
+while(low <= high) {
+   let mid = Math.floor(low + (high - low) / 2);
+   
+   if(arr[mid] === target ) {
+      result = mid;
+
+      if(x === true) {
+         low = mid + 1;
+
+      } else high = mid - 1;
+
+   } else if(arr[mid] < target) {
+      low = mid + 1;
+
+   } else high = mid - 1;
+
+}
+return result;
+}
+
+let arr = [1, 1 , 2 , 2 , 4 , 5 , 5 , 6, 6, 6 ,9 , 9 , 10 , 11];
+
+let target = 6;
+
+let lower_index = frequency(arr, target, false);
+let upper_index = frequency(arr, target, true);
+
+console.log(upper_index - lower_index + 1);
+    </script>
+</body>
+</html>
