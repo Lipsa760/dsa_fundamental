@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Binary_Search</h1>
+    <script>
+       let search = function(arr, target) {
+   let start = 0; end = arr.length - 1;
+
+   while(start <= end) {
+      let mid = Math.floor(start + (end - start) / 2);
+      if(arr[mid] === target) return mid;
+      else if(arr[mid] < target) start = mid + 1;
+      else end = mid -1;
+   } return - 1;
+}
+
+let arr = ['a','b','d','e','f','g','h','i','x','z'];
+let target = "z";
+
+console.log(search(arr, target));
+    </script>
+</body>
+</html>

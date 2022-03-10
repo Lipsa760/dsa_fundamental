@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let find_index = function(arr, target) {
+        let s = 0, e = arr.length - 1;
+        
+        while(s <= e) {
+           let mid = Math.floor(s + (e - s) / 2);
+     
+           if(arr[mid] === target) {
+           return mid;
+           }
+           else if(arr[mid] < target) { 
+               s = mid + 1;
+           }
+           else {
+               e = mid - 1;
+           }
+     
+        } 
+        return e + 1;
+     }
+     
+     let arr = [1, 2, 4, 6, 7, 9];
+     console.log(find_index(arr, 8));
+    </script>
+</body>
+</html>
